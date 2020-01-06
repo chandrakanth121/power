@@ -1,0 +1,10 @@
+
+{% extends 'testapp/base.html'%}
+{% block title_block%}{{Post.title}} {% endblock%}
+    {% block content %}
+
+         <h1>{{ Post.title}}</h1>
+           <p id='date' published on {{Post.publish}} by {{Post.author|upper}}</p>
+           {{Post.body|linebreaks}}
+
+     {% endblock%}

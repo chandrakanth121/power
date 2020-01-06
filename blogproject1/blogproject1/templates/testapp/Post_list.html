@@ -1,0 +1,12 @@
+
+{% extends 'testapp/base.html'%}
+{% block title_block%} CHANDRA BLOG  HOME PAGE{% endblock%}
+    {% block content %}
+       <h1>CHANDRA BLOG</h1>
+       {% for Post in Post_list %}
+       <a href="{{Post.get_absolute_url}}"><h2>{{Post.title}} </h2></a>
+         <h2>>{{ Post.title}}</h2>
+           <p> id='date' published on {{Post.publish}} by {{Post.author|upper}}</p>
+           {{Post.body|truncatewords:30|linebreaks}}
+       {% endfor%}
+     {% endblock%}
